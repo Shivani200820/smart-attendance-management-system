@@ -19,10 +19,12 @@ app = FastAPI(
     redoc_url="/redoc"
 )
 
-# Configure CORS using settings.ALLOWED_ORIGINS
+# Configure CORS for deployed frontend
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=[
+        "https://smart-attendance-system-ecru-eight.vercel.app",
+    ],
     allow_credentials=False,
     allow_methods=["*"],
     allow_headers=["*"],
